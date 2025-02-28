@@ -142,6 +142,7 @@ module "asg" {
   user_data = base64encode(
     join("\n", [
       local.user_data_head,
+      local.secure_strings_exports,
       var.configuration,
       local.user_data_tail,
     ])
